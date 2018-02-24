@@ -11,8 +11,10 @@ describe('fizzbuzz', function() {
   });
 
   it('should throw an error if passed an input other than a number', function() {
-    expect(fizzbuzz(true)).to.throw();
-    expect(fizzbuzz({})).to.throw();
-    expect(fizzbuzz()).to.throw();
+    expect(function() {
+      fizzbuzz(true);
+      fizzbuzz({});
+      fizzbuzz();
+    }).to.throw(Error);
   });
 });
